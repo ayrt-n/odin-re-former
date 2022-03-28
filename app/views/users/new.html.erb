@@ -1,4 +1,5 @@
-<form action="/users" method="post" accept-charset="UTF-8">
+<form action="/users" method="post" accept-charset="UTF-8" data-turbo="false">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="username">Username:</label>
   <input type="text" name="user[username]" id="username">
   <label for="email">E-mail:</label>
