@@ -18,6 +18,15 @@
   <%#= password_field_tag(:password) %>
   <%#= submit_tag("Submit") %>
 <%# end %>
+<% if @user.errors.any? %>
+    <h3>The form contains <%= pluralize(@user.errors.count, "error") %></h3>
+    <ol>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ol>
+<% end %>
+
 
 <%= form_with model: @user do |form| %>
   <%= form.label :username, "Pick a username:" %>
